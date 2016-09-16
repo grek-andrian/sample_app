@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'pry-rails', '~> 0.3.4'
+gem 'better_errors', '~> 2.1', '>= 2.1.1'
 
 group :development, :test do
   gem 'sqlite3'
