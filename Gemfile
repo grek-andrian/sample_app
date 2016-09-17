@@ -30,7 +30,7 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry-rails', '~> 0.3.4'
-
+gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 group :development, :test do
   gem 'sqlite3'
