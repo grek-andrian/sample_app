@@ -32,12 +32,14 @@ gem 'devise'
 gem 'pry-rails', '~> 0.3.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
+
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.4', '>= 3.4.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem "better_errors"
+  gem 'factory_girl_rails', '~> 4.5'
 end
 
 group :development do
