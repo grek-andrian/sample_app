@@ -9,6 +9,8 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, length: { minimum: 6 }
+  validates :age, numericality: { only_integer: true, greater_than: 16,
+            message: "You must have more 16 years!", presence: true }
 
  def User.new_remember_token
     SecureRandom.urlsafe_base64

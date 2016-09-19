@@ -16,7 +16,18 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.label :age %><br />
+      <%= f.number_field :age, class: 'form-control' %>
+     
+      <%= f.label :gender %><br />
+      <div class="radio-inline "><%= f.label :gender, 'male' %><%= f.radio_button :gender, 'male', checked: true %> </div>
+      <div class="radio-inline"><%= f.label :gender, 'female'%><%= f.radio_button :gender, 'female' %> </div>
+      <div class="radio-inline"><%= f.label :gender, 'other' %><%= f.radio_button :gender, 'other' %> </div><br />
+    
+      <%= f.label :occupation %><br />
+      <%= f.select :occupation, options_for_select([['Student' ,'Student'], ['Self employed', 'Self employed'], ['Unemployed', 'Unemployed'], ['Employee', 'Employee']]), include_blank: true %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %> 
     <% end %>
   </div>
 </div>
