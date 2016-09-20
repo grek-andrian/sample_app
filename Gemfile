@@ -34,7 +34,8 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'rspec-its', '~> 1.2'
 gem 'bootstrap_form'
 gem 'faker', '~> 1.6', '>= 1.6.3'
-
+gem 'kaminari', github: "amatsuda/kaminari", branch: '0-17-stable'
+gem 'bootstrap-kaminari-views'
 
 group :development, :test do
   gem 'sqlite3'
