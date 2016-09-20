@@ -1,33 +1,57 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user) do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+<div class="container">    
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+      <div class="panel panel-info" >
+        <div class="panel-heading">
+            <h3 class="panel-heading center"><i class="glyphicon glyphicon-globe"></i>Sign up</h3>
+              <div style="padding-top:30px" class="panel-body" >
+                  
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+    
+    <%= bootstrap_form_for(@user) do |f| %>
+    
+      <%= f.text_field :name, placeholder: "Enter your name", skip_label: true, icon: "user" %> 
+              
+      <%= f.email_field :email, placeholder: "Enter your Email", skip_label: true, icon: "envelope" %>
+  
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%#= f.label :password %>
+      <%= f.password_field :password, placeholder: "Password", skip_label: true, icon: "lock" %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%#= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation, placeholder: "Password confirmation", skip_label: true, icon: "lock" %>
 
-      <%= f.label :age %><br />
-      <%= f.number_field :age, class: 'form-control' %>
+      <%#= f.label :age %>
+      <%= f.number_field :age, placeholder: "Age ", skip_label: true, icon: "arrow-up" %>
+
+      <%#= f.label :occupation %>
+      <%= f.select :occupation, options_for_select([['Student' ,'Student'], ['Self employed', 'Self employed'], ['Unemployed', 'Unemployed'], ['Employee', 'Employee']]), skip_label: true, include_blank: "Choose your occupation",class: "selectpicker"  %>
      
-      <%= f.label :gender %><br />
-      <div class="radio-inline "><%= f.label :gender, 'male' %><%= f.radio_button :gender, 'male', checked: true %> </div>
+      <%= f.label :gender %>
+      <div class="radio-inline"><%= f.label :gender, 'male' %><%= f.radio_button :gender, 'male', checked: true %> </div>
       <div class="radio-inline"><%= f.label :gender, 'female'%><%= f.radio_button :gender, 'female' %> </div>
       <div class="radio-inline"><%= f.label :gender, 'other' %><%= f.radio_button :gender, 'other' %> </div><br />
-    
-      <%= f.label :occupation %><br />
-      <%= f.select :occupation, options_for_select([['Student' ,'Student'], ['Self employed', 'Self employed'], ['Unemployed', 'Unemployed'], ['Employee', 'Employee']]), include_blank: true %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %> 
+      <%#= f.form_group :gender, label: { text: "Gender" } do %>
+  <%#= f.radio_button :gender, "male", label: "      Male", inline: true %>
+  <%#= f.radio_button :gender, "female", label: "Female", inline: true %>
+  <%#= f.radio_button :gender, "other", label: "Other", inline: true %>
+<%# end %>
+
+      <%= f.submit "Create my account", class: "btn btn-success" %> 
+
     <% end %>
   </div>
 </div>
+                                 
+
+                                
+
+
+
+                        </div>                     
+                    </div>  
+                  </div>       
+              </div>
+  </div>

@@ -1,19 +1,36 @@
-<% provide(:title, "Sign in") %>
-<h1>Log in</h1>
+<% provide(:title, "Log in") %>
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: sessions_path) do |f| %>
+<div class="container">
+    <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-heading center">
+                    <i class="glyphicon glyphicon-globe"></i>Log in</h3>
+                <div style="padding-top:30px" class="panel-body">
 
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
+                    <%#= bootstrap_form_for(@user) do |f| %>
+                    <%= bootstrap_form_for(:session, url: sessions_path) do |f| %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
+                    <%#= f.text_field :name, placeholder: "Enter your name", skip_label: true, icon: "user" %>
 
-      <%= f.submit "Sign in", class: "btn btn-primary" %>
-    <% end %>
+                    <%= f.email_field :email, placeholder: "Enter your Email", skip_label: true, icon: "envelope" %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-  </div>
+                    <%#= f.label :password %>
+                    <%= f.password_field :password, placeholder: "Password", skip_label: true, icon: "lock" %>
+
+                    <%#= f.label :password_confirmation, "Confirmation" %>
+                    <%= f.password_field :password_confirmation, placeholder: "Password confirmation", skip_label: true, icon: "lock" %>
+
+                    
+                    <%= f.submit "Sign in", class: "btn btn-success" %>
+
+                    <% end %>
+
+                    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 </div>

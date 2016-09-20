@@ -4,5 +4,8 @@ FactoryGirl.define do
     email    "andrian@ukr.net"
     password "1234567"
     password_confirmation "1234567"
+    age 23
+    gender "male"
+    occupation "student"
   end
 end

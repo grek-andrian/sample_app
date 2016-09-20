@@ -32,6 +32,7 @@ gem 'devise'
 gem 'pry-rails', '~> 0.3.4'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 gem 'rspec-its', '~> 1.2'
+gem 'bootstrap_form'
 
 
 group :development, :test do

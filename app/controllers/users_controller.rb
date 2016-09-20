@@ -5,6 +5,10 @@ class UsersController < ApplicationController
 
   def show
   	@user=User.find(params[:id])
+    respond_to do |format|
+    format.html
+    format.json { render json: @article }
+  end
   end
 
    def create
@@ -14,6 +18,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
+      flash[:error] = 'Some error here!'
       render 'new'
     end
   end
