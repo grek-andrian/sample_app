@@ -1,6 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+.navbar-custom {
+    color: #FFFFFF;
+    background-color: #103179;
+}
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
