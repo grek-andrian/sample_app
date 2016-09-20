@@ -1,30 +1,26 @@
-<% provide(:title, 'Sign up') %>
+<% provide(:title, "Edit user") %>
 
 <div class="container">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
                 <h3 class="panel-heading center">
-                    <i class="glyphicon glyphicon-globe"></i>&nbsp;Sign up</h3>
+                    <i class="glyphicon glyphicon-pencil"></i>&nbsp;Update your profile</h3>
                 <div style="padding-top:10px" class="panel-body">
 
                     <%= bootstrap_form_for(@user) do |f| %>
                     <%= render 'shared/error_messages' %>
-
+                    
                     <%= f.text_field :name, placeholder: "Enter your Name", skip_label: true, icon: "user" %>
 
                     <%= f.email_field :email, placeholder: "Enter your Email", skip_label: true, icon: "envelope" %>
 
-                    <%#= f.label :password %>
                     <%= f.password_field :password, placeholder: "Password", skip_label: true, icon: "lock" %>
 
-                    <%#= f.label :password_confirmation, "Confirmation" %>
                     <%= f.password_field :password_confirmation, placeholder: "Password confirmation", skip_label: true, icon: "lock" %>
 
-                    <%#= f.label :age %>
                     <%= f.number_field :age, placeholder: "Age ", skip_label: true, icon: "arrow-up" %>
 
-                    <%#= f.label :occupation %>
                     <%= f.select :occupation, options_for_select([['Student' ,'Student'], ['Self employed', 'Self employed'], ['Unemployed', 'Unemployed'], ['Employee', 'Employee']]), skip_label: true, include_blank: "Choose your occupation",class: "selectpicker"  %>
 
                     <%= f.label :gender %>
@@ -33,13 +29,10 @@
                     <div class="radio-inline"><%= f.label :gender, 'female'%><%= f.radio_button :gender, 'female' %>
                     </div> 
               
-                    <%#= f.form_group :gender, label: { text: "Gender" } do %>
-                    <%#= f.radio_button :gender, "male", label: "      Male", inline: true %>
-                    <%#= f.radio_button :gender, "female", label: "Female", inline: true %>
-                    <%#= f.radio_button :gender, "other", label: "Other", inline: true %>
-                    <%# end %>
-
-                    <%= f.submit "Create my account", class: "btn btn-success" %>
+                    <%= f.submit "Save changes", class: "btn btn-success" %>
+                    <div class="gravatar_edit">
+                      <%= gravatar_for @user %><a href="http://gravatar.com/emails" target="_blank">change</a>
+                    </div>
 
                     <% end %>
                 </div>
