@@ -36,6 +36,7 @@ gem 'bootstrap_form'
 gem 'faker', '~> 1.6', '>= 1.6.3'
 gem 'kaminari', github: "amatsuda/kaminari", branch: '0-17-stable'
 gem 'bootstrap-kaminari-views'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 group :development, :test do
   gem 'sqlite3'

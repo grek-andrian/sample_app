@@ -15,26 +15,24 @@
 
                     <%= f.email_field :email, placeholder: "Enter your Email", skip_label: true, icon: "envelope" %>
 
-                    <%#= f.label :password %>
                     <%= f.password_field :password, placeholder: "Password", skip_label: true, icon: "lock" %>
 
-                    <%#= f.label :password_confirmation, "Confirmation" %>
                     <%= f.password_field :password_confirmation, placeholder: "Password confirmation", skip_label: true, icon: "lock" %>
 
-                    <%#= f.label :age %>
                     <%= f.number_field :age, placeholder: "Age ", skip_label: true, icon: "arrow-up" %>
 
-                    <%#= f.label :occupation %>
                     <%= f.select :occupation, options_for_select([['Student' ,'Student'], ['Self employed', 'Self employed'], ['Unemployed', 'Unemployed'], ['Employee', 'Employee']]), skip_label: true, include_blank: "Choose your occupation",class: "selectpicker"  %>
+
+                    <%= f.file_field :avatar, label: "Choose your photo", icon: "camera" %>
 
                     <%= f.label :gender %>
                     <div class="radio-inline"><%= f.label :gender, 'male' %><%= f.radio_button :gender, 'male', checked: true %>
                     </div>
                     <div class="radio-inline"><%= f.label :gender, 'female'%><%= f.radio_button :gender, 'female' %>
-                    </div> 
-              
+                    </div>
+
                     <%#= f.form_group :gender, label: { text: "Gender" } do %>
-                    <%#= f.radio_button :gender, "male", label: "      Male", inline: true %>
+                    <%#= f.radio_button :gender, "male", label: "Male", inline: true %>
                     <%#= f.radio_button :gender, "female", label: "Female", inline: true %>
                     <%#= f.radio_button :gender, "other", label: "Other", inline: true %>
                     <%# end %>
